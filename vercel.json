@@ -2,14 +2,26 @@
     "version": 2,
     "builds": [
         {
-            "src": "./index.cjs",
+            "src": "server.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "/index.cjs"
+            "dest": "/server.js"
+        },
+        {
+            "src": "/instagram/login",
+            "dest": "/server.js"
+        },
+        {
+            "src": "/facebook/login",
+            "dest": "/server.js"
+        },
+        {
+            "src": "/google/login",
+            "dest": "/server.js"
         }
     ]
 }
